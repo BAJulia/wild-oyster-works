@@ -3,3 +3,9 @@ dist
 *.local
 .DS_Store
 *.tsbuildinfo
+
+# Original photographs supplied for the Artwork Curator. Kept local: originals can
+# contain location data and are never published directly. Only prepared copies in
+# public/images/ are committed.
+artwork-intake/*
+!artwork-intake/README.md

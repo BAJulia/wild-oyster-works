@@ -42,6 +42,8 @@ Living document. Updated as decisions are made.
 6. Is there a story behind the name "Wild Oyster Works" to tell on the site?
 7. Should Wearable Art stay a separate collection?
 8. Hosting and domain: where should the site live when it's ready?
+9. **Artistic attribution**: which pieces are interpretations of other artists' work (e.g. maritime pieces after Mauritz de Haas)? The data model has no attribution field yet; attribution currently goes in the description. Should it get its own displayed field?
+10. Should "commissioned" and "retained" become their own availability statuses, or map to the existing ones (private collection / not for sale)?
 
 ## Known issues
 

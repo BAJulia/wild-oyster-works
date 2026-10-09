@@ -33,6 +33,28 @@ Publishing is automatic: every time changes are pushed to the `main` branch on G
 - **One-time setup** (already done once): repository **Settings → Pages → Source: GitHub Actions**.
 - **Custom domain later:** add it under Settings → Pages, then change `BASE_PATH` in the workflow to `/`.
 
+## The Artwork Curator (AI assistant)
+
+A Claude Code assistant that adds new pieces, fills in missing details, writes descriptions with you, prepares photos and reviews the gallery. It's defined in [`.claude/agents/artwork-curator.md`](.claude/agents/artwork-curator.md).
+
+**How to use it:** open Claude Code in this folder and ask in plain words, for example:
+
+- *"Use the Artwork Curator to add a new piece."* Put the photos in [`artwork-intake/`](artwork-intake/README.md) first.
+- *"Use the Artwork Curator to update The Clearing."*
+- *"Use the Artwork Curator to add the process photos for Alice's Peacock."*
+- *"Use the Artwork Curator to review my gallery for missing information."* This one only reports; it changes nothing.
+
+You can also type `@artwork-curator` followed by your request.
+
+**What to expect:** the curator interviews you a few questions at a time; you can always say "skip". It then shows you the text and details for approval (**Gate 1**), then the exact files it will change (**Gate 2**). Only after both does it change anything, and only on your computer. **Publishing is always a separate step**: nothing goes live until you explicitly ask for the changes to be pushed to GitHub. Claude Code will also ask for confirmation before any `git push`.
+
+Helper commands it uses (you can run them too):
+
+| Command | What it does |
+| --- | --- |
+| `npm run check:content` | Checks every artwork and story: unique ids/slugs, image files exist, alt text present. Lists missing details. Changes nothing. |
+| `powershell -ExecutionPolicy Bypass -File scripts/prepare-image.ps1 -Source artwork-intake/<photo> -Destination public/images/artworks/<folder>/<name>.jpeg` | Makes a web copy of a photo: upright, max 2000px, no cropping, location data removed. Never touches the original. |
+
 ## Adding or changing artwork
 
 All content lives in plain data files. You never need to edit page code to add work.
