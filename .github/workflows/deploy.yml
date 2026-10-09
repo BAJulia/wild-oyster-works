@@ -32,8 +32,9 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          # The site is served from https://<user>.github.io/<repository-name>/
-          BASE_PATH: /${{ github.event.repository.name }}/
+          # The site is served from the custom domain https://wildoysterworks.com/ (the root).
+          # Without a custom domain this would be /${{ github.event.repository.name }}/
+          BASE_PATH: /
 
       # GitHub Pages shows 404.html for addresses it doesn't recognise (e.g. /gallery/blue-jay
       # when the page is refreshed). Making it a copy of the app lets the site handle those.
