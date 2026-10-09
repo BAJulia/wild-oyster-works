@@ -24,14 +24,14 @@ Other commands:
 
 ## Publishing (GitHub Pages)
 
-The live site is at **https://bajulia.github.io/wild-oyster-works/**.
+The live site is at **https://wildoysterworks.com**. (wildoysterwork.com, without the "s", forwards to it via GoDaddy; see [docs/domain-setup.md](docs/domain-setup.md).)
 
 Publishing is automatic: every time changes are pushed to the `main` branch on GitHub, the workflow in [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) builds the site and publishes it. It takes about two minutes.
 
 - **See progress:** on GitHub, open the repository's **Actions** tab. A green check means it's live; a red cross means the build failed (click it to see why). The live site keeps its previous version until a build succeeds.
 - **Publish again without changes:** Actions tab → *Deploy to GitHub Pages* → **Run workflow**.
 - **One-time setup** (already done once): repository **Settings → Pages → Source: GitHub Actions**.
-- **Custom domain later:** add it under Settings → Pages, then change `BASE_PATH` in the workflow to `/`.
+- **Custom domain:** set under Settings → Pages. Because of it, `BASE_PATH` in the workflow is `/`. If the custom domain is ever removed, change it back to `/wild-oyster-works/`.
 
 ## The Artwork Curator (AI assistant)
 
