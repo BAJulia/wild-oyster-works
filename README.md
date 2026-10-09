@@ -22,6 +22,17 @@ Other commands:
 | `npm run build` | Checks the code and builds the finished site into `dist/` |
 | `npm run preview` | Serves the built site locally to check it before publishing |
 
+## Publishing (GitHub Pages)
+
+The live site is at **https://bajulia.github.io/wild-oyster-works/**.
+
+Publishing is automatic: every time changes are pushed to the `main` branch on GitHub, the workflow in [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) builds the site and publishes it. It takes about two minutes.
+
+- **See progress:** on GitHub, open the repository's **Actions** tab. A green check means it's live; a red cross means the build failed (click it to see why). The live site keeps its previous version until a build succeeds.
+- **Publish again without changes:** Actions tab → *Deploy to GitHub Pages* → **Run workflow**.
+- **One-time setup** (already done once): repository **Settings → Pages → Source: GitHub Actions**.
+- **Custom domain later:** add it under Settings → Pages, then change `BASE_PATH` in the workflow to `/`.
+
 ## Adding or changing artwork
 
 All content lives in plain data files. You never need to edit page code to add work.

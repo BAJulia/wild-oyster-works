@@ -2,6 +2,7 @@ import { useState, type FormEvent } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { artworks, getArtwork } from '../data/artworks';
 import { site } from '../data/site';
+import { pageUrl } from '../data/assets';
 
 const inquiryTypes = [
   { id: 'purchase', label: 'Purchase an artwork', hint: 'Ask about a piece in the gallery.' },
@@ -36,7 +37,7 @@ export function Inquiries() {
       '',
       `Name: ${name.trim()}`,
       `Email: ${replyTo.trim()}`,
-      artwork ? `Artwork: ${artwork.title} (${window.location.origin}/gallery/${artwork.slug})` : '',
+      artwork ? `Artwork: ${artwork.title} (${pageUrl(`/gallery/${artwork.slug}`)})` : '',
     ]
       .filter((line, i, all) => line !== '' || (i > 0 && all[i - 1] !== ''))
       .join('\n');

@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.1 (2026-10-09): GitHub Pages
+
+- Added an automatic deploy workflow: every push to `main` publishes the site to GitHub Pages.
+- Site now works when served from a sub-folder (`/wild-oyster-works/`): images, links and page refreshes.
+
 ## 0.1.0 (2026-10-09): first working MVP
 
 - Set up React + TypeScript + Vite project with React Router (replaces the placeholder `index.html`).

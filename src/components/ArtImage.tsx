@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { ArtImage as ArtImageData } from '../data/types';
 import { site } from '../data/site';
+import { assetUrl } from '../data/assets';
 
 interface Props {
   image: ArtImageData;
@@ -33,7 +34,7 @@ export function ArtImage({ image, className = '', eager = false, fit = 'cover', 
   return (
     <img
       className={`art-image art-image--${fit} ${className}`}
-      src={encodeURI(image.src)}
+      src={assetUrl(image.src)}
       alt={image.alt}
       loading={eager ? 'eager' : 'lazy'}
       decoding="async"

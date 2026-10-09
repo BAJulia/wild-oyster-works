@@ -1,4 +1,5 @@
 import type { VideoLink } from '../data/types';
+import { assetUrl } from '../data/assets';
 
 /** Embeds videos that have a URL, and shows a quiet "coming soon" note for those that don't. */
 export function VideoList({ videos }: { videos: VideoLink[] }) {
@@ -10,7 +11,7 @@ export function VideoList({ videos }: { videos: VideoLink[] }) {
           <figure key={video.title} className="video">
             <div className="video__frame">
               {/\.(mp4|webm)$/i.test(video.url) ? (
-                <video src={video.url} controls preload="metadata" />
+                <video src={assetUrl(video.url)} controls preload="metadata" />
               ) : (
                 <iframe src={video.url} title={video.title} loading="lazy" allowFullScreen />
               )}
